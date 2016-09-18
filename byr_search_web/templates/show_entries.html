@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block body %}
+    <form action="/" method=post class=search>
+        <select id='select' name="select">
+            <option value="author" selected=true>作者</option>
+            <option value="title">主题</option>  
+            <option value="text">内容</option> 
+            <option value="uptime">发帖时间</option>   
+        </select>
+        <input type="text" name="key"  />
+        <input type="submit" value="搜索" />
+    </form>
+  <ul class=entries>
+  {%if key_word %}
+  <h2>搜索词: {{ key_word }}, 结果: {{ lenth }}</h2> 
+  <table>
+  <tr>
+  <th>ID    </td>
+  <th>作者       </th>
+  <th>标题       </th>
+  <th>热度       </th>
+  <th>时间       </th>
+  </tr>
+  {% for article in paras %}
+  <tr>
+  <td>{{ article.id }}    </td>
+  <td>{{ article.author }}</td>
+  <td><a href="{{ article.url }}" >{{ article.title }}</a> </td>
+  <td>{{ article.hot }}   </td>
+  <td>{{ article.uptime }}</td>
+  </tr>
+  {% else %}
+    <li><em>Unbelievable.  No sections found</em>
+  {% endfor %}
+  </table>
+  {% endif %}  
+  </ul>
+{% endblock %}
