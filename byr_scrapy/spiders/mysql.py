@@ -36,6 +36,6 @@ class MySQL:
             print('update failed')
 
 if __name__ == '__main__':
-    db = MySQL('127.0.0.1', 'fitsir', '870606', 'byr', 3306, 'utf8', 5, '')
+    db = MySQL('127.0.0.1', '******', '******', 'byr', 3306, 'utf8', 5, '')
     rows = db.query('select * from section')
     print(rows)

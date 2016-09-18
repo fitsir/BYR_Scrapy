@@ -55,7 +55,7 @@ class ByrArticleSpider(scrapy.Spider):
     def start_requests(self):
         return [scrapy.FormRequest("http://bbs.byr.cn/user/ajax_login.json",
                                    formdata={
-                                       'id': 'ae', 'passwd': '870606', 'mode': '0', 'CookieDate': '0'},
+                                       'id': '******', 'passwd': '******', 'mode': '0', 'CookieDate': '0'},
                                    meta={'cookiejar': 1},
                                    headers=self.headers,
                                    callback=self.logged_in)]

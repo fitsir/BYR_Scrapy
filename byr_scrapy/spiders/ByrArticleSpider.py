@@ -84,10 +84,10 @@ class ByrArticleSpider(scrapy.Spider):
 
     def start_requests(self):
         self.db = MySQL(
-            '127.0.0.1', 'fitsir', '870606', 'byr', 3306, 'utf8', 5, '')
+            '127.0.0.1', '******', '******', 'byr', 3306, 'utf8', 5, '')
         return [scrapy.FormRequest("http://bbs.byr.cn/user/ajax_login.json",
                                    formdata={
-                                       'id': 'ae', 'passwd': '870606', 'mode': '0', 'CookieDate': '0'},
+                                       'id': '******', 'passwd': '******', 'mode': '0', 'CookieDate': '0'},
                                    meta={'cookiejar': 1},
                                    headers=self.headers,
                                    callback=self.logged_in)]

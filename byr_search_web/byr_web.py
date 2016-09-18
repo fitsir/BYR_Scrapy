@@ -11,7 +11,7 @@ app = Flask(__name__)
 db = SQLAlchemy(app)
 app.secret_key = 'super secret key'
 app.config[
-    'SQLALCHEMY_DATABASE_URI'] = 'mysql://fitsir:870606@10.104.11.141:3306/byr?charset=utf8'
+    'SQLALCHEMY_DATABASE_URI'] = 'mysql://******:******@*.*.*.*:3306/byr?charset=utf8'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 
